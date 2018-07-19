@@ -1,10 +1,10 @@
 {
   "openapi" : "3.0.1",
   "info" : {
-    "title" : "List of contacts REST",
+    "title" : "CNTACS List.",
     "termsOfService" : "https://remainsoftware.com/terms-and-conditions",
     "contact" : {
-      "name" : "Remain Software XYZ",
+      "name" : "Remain Software",
       "url" : "https://remainsoftware.com",
       "email" : "info@remainsoftware.com"
     },
@@ -12,11 +12,12 @@
       "name" : "Remain Software - REST4i LXR Interface",
       "url" : "https://remainsoftware.com/terms-and-conditions"
     },
-    "version" : "TD/OMS 10.0 Milestone 3 - Pre",
+    "version" : "TD/OMS 11.0 Milestone 1 - Pre",
     "x-lxrinfo" : {
       "environment" : "*DEV",
-      "refuuid" : "75da565b-adbd-4005-91da-f45d812b8261",
-      "timestamp" : "2018-07-18T13:30:17.815Z"
+      "refuuid" : "42fee62c-1913-4b64-a653-d406dfb3a739",
+      "directory" : "/QOpenSys/OMSIFS/XA/DEV/OAS3/",
+      "timestamp" : "2018-07-19T11:14:34.036Z"
     }
   },
   "servers" : [ {
@@ -26,7 +27,7 @@
   "paths" : {
     "/CNTACSLST" : {
       "get" : {
-        "summary" : "List of contacts",
+        "summary" : "CNTACS List.",
         "description" : "GET: your description here",
         "operationId" : "CNTACSLST",
         "parameters" : [ ],
@@ -56,7 +57,6 @@
           "file" : "CNTACSList.json",
           "srclibrary" : "XAN4CDEMDS",
           "srcfile" : "QRPGLESRC",
-          "directory" : "/QOpenSys/OMSIFS/XA/DEV/OAS3/",
           "object" : "CNTACSLST"
         }
       }
@@ -65,8 +65,16 @@
   "components" : {
     "schemas" : {
       "CNTACS" : {
+        "x-pfname" : "CNTACS",
+        "x-library" : "XAN4CDEMDD",
         "type" : "object",
         "properties" : {
+          "Cusno" : {
+            "maxLength" : 5,
+            "type" : "integer",
+            "description" : "Cus. No.",
+            "x-column" : "CUSNO"
+          },
           "ProductCode" : {
             "maxLength" : 2,
             "type" : "string",
@@ -78,20 +86,9 @@
             "type" : "string",
             "description" : "Contact",
             "x-column" : "USERNM"
-          },
-          "Custome" : {
-            "maxLength" : 5,
-            "type" : "integer",
-            "description" : "Cus. No.",
-            "format" : "int32",
-            "x-column" : "CUSNO"
           }
-        },
-        "x-pfname" : "CNTACS",
-        "x-library" : "XAN4CDEMDD"
+        }
       }
-    },
-    "parameters" : { },
-    "requestBodies" : { }
+    }
   }
 }
