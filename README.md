@@ -1,2 +1,2 @@
 # OAS3
-A repository where Remain Software can test REST stuff.
+A place to share the Remain Order Entry API.
