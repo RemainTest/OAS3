@@ -58,8 +58,7 @@
           "library" : "xan4cdemdo",
           "srclibrary" : "xan4cdemds",
           "srcfile" : "QRPGlesrc",
-          "consumer" : "aalogin",
-          "object" : "aalogin",
+          "object" : "cons01",
           "insertschema" : "#/components/schemas/response"
         }
       }
