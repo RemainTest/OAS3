@@ -1,0 +1,92 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "SAIDCST List.",
+    "termsOfService" : "https://remainsoftware.com/terms-and-conditions",
+    "contact" : {
+      "name" : "Remain Software",
+      "url" : "https://remainsoftware.com",
+      "email" : "info@remainsoftware.com"
+    },
+    "license" : {
+      "name" : "Remain Software - REST4i LXR Interface",
+      "url" : "https://remainsoftware.com/terms-and-conditions"
+    },
+    "version" : "TD/OMS 11.0 Milestone 1 - Pre",
+    "x-lxrinfo" : {
+      "environment" : "*DEV",
+      "refuuid" : "27c57103-8329-4a34-8572-94d93d84781a",
+      "directory" : "/QOpenSys/OMSIFS/XA/DEV/OAS3/WIM/",
+      "timestamp" : "2018-08-17T09:35:39.844Z"
+    }
+  },
+  "servers" : [ {
+    "url" : "http://plato/XAN4CDEMDO",
+    "description" : "plato"
+  } ],
+  "paths" : {
+    "/SAIDCSTLST" : {
+      "get" : {
+        "summary" : "SAIDCST List.",
+        "description" : "GET: your description here",
+        "operationId" : "SAIDCSTLST",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "return code 200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SAIDCST"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request from Client GET request"
+          },
+          "500" : {
+            "description" : "Internal server error"
+          },
+          "default" : {
+            "description" : "Unexpected error occured"
+          }
+        },
+        "x-lxrgen" : {
+          "library" : "XAN4CDEMDO",
+          "file" : "SAIDCSTList.json",
+          "srclibrary" : "XAN4CDEMDS",
+          "srcfile" : "QRPGLESRC",
+          "object" : "SAIDCSTLST"
+        }
+      },
+      "parameters" : [ ]
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "SAIDCST" : {
+        "type" : "object",
+        "properties" : {
+          "Contact" : {
+            "maxLength" : 34,
+            "type" : "string",
+            "description" : "Contact",
+            "x-column" : "USERNM"
+          },
+          "CusNo" : {
+            "maxLength" : 5,
+            "type" : "integer",
+            "description" : "Cus. No.",
+            "format" : "int32",
+            "x-column" : "CUSNO"
+          }
+        },
+        "x-pfname" : "SAIDCST",
+        "x-library" : "XAN4CDEMDD"
+      }
+    },
+    "parameters" : { },
+    "requestBodies" : { }
+  }
+}
