@@ -1,0 +1,100 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Process List",
+    "termsOfService" : "https://remainsoftware.com/terms-and-conditions",
+    "contact" : {
+      "name" : "Remain Software",
+      "url" : "https://remainsoftware.com",
+      "email" : "info@remainsoftware.com"
+    },
+    "license" : {
+      "name" : "Remain Software - REST4i LXR Interface",
+      "url" : "https://remainsoftware.com/terms-and-conditions"
+    },
+    "version" : "TD/OMS 11.0 Milestone 1 - Pre",
+    "x-lxrinfo" : {
+      "environment" : "*DEV",
+      "refuuid" : "fc824291-277b-4adb-9949-d09559fe1605",
+      "directory" : "/QOpenSys/OMSIFS/XA/DEV/OAS3/WIM/",
+      "timestamp" : "2018-08-17T12:31:36.685Z"
+    }
+  },
+  "servers" : [ {
+    "url" : "http://plato/XAN4CDEMDO",
+    "description" : "plato"
+  } ],
+  "paths" : {
+    "/PROCESS" : {
+      "get" : {
+        "summary" : "Process List",
+        "description" : "GET: your description here",
+        "operationId" : "PROCESS",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "return code 200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CNTACS"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request from Client GET request"
+          },
+          "500" : {
+            "description" : "Internal server error"
+          },
+          "default" : {
+            "description" : "Unexpected error occured"
+          }
+        },
+        "x-lxrgen" : {
+          "library" : "XAN4CDEMDO",
+          "file" : "T1Process.json",
+          "srclibrary" : "XAN4CDEMDS",
+          "srcfile" : "QRPGLESRC",
+          "object" : "PROCESS"
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "CNTACS" : {
+        "type" : "object",
+        "properties" : {
+          "Cus.No." : {
+            "maxLength" : 5,
+            "type" : "integer",
+            "description" : "Cus. No.",
+            "x-column" : "CUSNO"
+          },
+          "ProductCode" : {
+            "maxLength" : 2,
+            "type" : "string",
+            "description" : "Product Code",
+            "x-column" : "PRPCDE"
+          },
+          "Phone" : {
+            "maxLength" : 17,
+            "type" : "string",
+            "description" : "Phone",
+            "x-column" : "TELNO"
+          },
+          "Contact" : {
+            "maxLength" : 34,
+            "type" : "string",
+            "description" : "Contact",
+            "x-column" : "USERNM"
+          }
+        },
+        "x-pfname" : "CNTACS",
+        "x-library" : "XAN4CDEMTD"
+      }
+    }
+  }
+}
